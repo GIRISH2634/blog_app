@@ -83,6 +83,7 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
+                            // change code here to image
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
