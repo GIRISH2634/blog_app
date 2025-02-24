@@ -7,6 +7,20 @@ import 'blog_detail_screen.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
+  // List of image paths
+  final List<String> imagePaths = [
+    'assets/image1.png',
+    'assets/image2.webp',
+    'assets/image3.webp',
+    'assets/image4.webp',
+    'assets/image5.webp',
+    'assets/image6.webp',
+    'assets/image7.webp',
+    'assets/image8.webp',
+    'assets/image9.webp',
+    'assets/image10.jpg',
+  ];
+
   // Use blogs from dummy_data.dart
   final List<Map<String, String>> blogs = dummyBlogs;
 
@@ -37,23 +51,22 @@ class HomeScreen extends StatelessWidget {
         if (snapshot.hasData && snapshot.data == true) {
           return Scaffold(
             appBar: AppBar(
-  title: const Text('All Blogs'),
-  actions: [
-    IconButton(
-      icon: const Icon(Icons.book),
-      tooltip: 'My Blogs',
-      onPressed: () {
-        Navigator.pushNamed(context, '/myBlogs'); // Navigate to MyBlogsScreen
-      },
-    ),
-    IconButton(
-      icon: const Icon(Icons.logout),
-      tooltip: 'Logout',
-      onPressed: () => _logout(context),
-    ),
-  ],
-),
-
+              title: const Text('All Blogs'),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.book),
+                  tooltip: 'My Blogs',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/myBlogs'); // Navigate to MyBlogsScreen
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.logout),
+                  tooltip: 'Logout',
+                  onPressed: () => _logout(context),
+                ),
+              ],
+            ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(
@@ -82,22 +95,22 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            // change code here to image
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent,
-                                borderRadius: const BorderRadius.vertical(
-                                  top: Radius.circular(12),
-                                ),
+                          // Corrected image display logic
+                          Container(
+                            width: double.infinity,
+                            height: 120, // Fixed height to avoid UI issues
+                            decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: const BorderRadius.vertical(
+                                top: Radius.circular(12),
                               ),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.article,
-                                  size: 50,
-                                  color: Colors.white,
-                                ),
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                imagePaths[index % imagePaths.length], // Pick image dynamically
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),

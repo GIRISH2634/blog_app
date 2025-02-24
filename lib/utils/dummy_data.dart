@@ -2,53 +2,53 @@
 
 final List<Map<String, String>> dummyBlogs = [
   {
-    'title': 'Flutter Basics',
+    'title': 'learnings from my GATE journey ',
     'description': 'Learn the basics of Flutter in this comprehensive guide.',
-    'author': 'Author Girish',
+    'author': 'Author Sushant ',
   },
   {
-    'title': 'State Management in Flutter',
+    'title': 'sources to read for system subjects ',
     'description': 'Explore different state management techniques in Flutter.',
-    'author': 'Author Girish',
-  },
-  {
-    'title': 'Building REST APIs with Node.js',
-    'description': 'A step-by-step guide on creating REST APIs with Node.js.',
-    'author': 'Author Girish',
-  },
-  {
-    'title': 'Dart Programming Tips',
-    'description': 'Improve your Dart skills with these useful tips.',
-    'author': 'Author Girish',
-  },
-  {
-    'title': 'Understanding Asynchronous Programming',
-    'description': 'Learn about Futures, Streams, and async/await in Dart.',
-    'author': 'Author Girish',
-  },
-  {
-    'title': 'Building a Blog App in Flutter',
-    'description': 'A complete guide to building a blog application with Flutter.',
-    'author': 'Author Girish',
-  },
-  {
-    'title': 'Firebase Authentication in Flutter',
-    'description': 'Implement user authentication in your Flutter apps using Firebase.',
     'author': 'Author Varun',
   },
   {
-    'title': 'Flutter UI Design Principles',
+    'title': 'practice is the key ',
+    'description': 'A step-by-step guide on creating REST APIs with Node.js.',
+    'author': 'Author siddharth',
+  },
+  {
+    'title': 'consistency is what most difficult to maintain',
+    'description': 'Improve your Dart skills with these useful tips.',
+    'author': 'Author Vaibhav ',
+  },
+  {
+    'title': 'fear of computer networks subject ',
+    'description': 'Learn about Futures, Streams, and async/await in Dart.',
+    'author': 'Author akshat',
+  },
+  {
+    'title': 'sources for practice material ',
+    'description': 'A complete guide to building a blog application with Flutter.',
+    'author': 'Author harsh',
+  },
+  {
+    'title': 'how to manage college and gate',
+    'description': 'Implement user authentication in your Flutter apps using Firebase.',
+    'author': 'Author vihan',
+  },
+  {
+    'title': 'Placements vs GATE',
     'description': 'Enhance your UI skills with Flutter’s design principles.',
-    'author': 'Author Girish',
+    'author': 'Author aryan ',
   },
   {
-    'title': 'Deploying a Flutter App',
+    'title': 'Life after GATE ',
     'description': 'Step-by-step guide to deploying a Flutter app to the Play Store and App Store.',
-    'author': 'Author Girish',
+    'author': 'Author UMED',
   },
   {
-    'title': 'Advanced Flutter Animations',
+    'title': 'placement report in IIT/IISC for MTECH',
     'description': 'Master animations in Flutter with custom transitions and effects.',
-    'author': 'Author Girish',
+    'author': 'Author atif ',
   },
 ];
