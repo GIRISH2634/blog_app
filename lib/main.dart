@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'screens/login_screen.dart';
-import 'screens/home_screen.dart';
-import 'screens/my_blogs_screen.dart';
-import 'screens/create_blog_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+  bool firebaseInitialized = false;
 
-  runApp(MyApp(isLoggedIn: isLoggedIn));
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    firebaseInitialized = true;
+  } catch (e) {
+    debugPrint("Firebase initialization error: $e");
+  }
+
+  runApp(MyApp(firebaseInitialized: firebaseInitialized));
 }
 
 class MyApp extends StatelessWidget {
-  final bool isLoggedIn;
+  final bool firebaseInitialized;
 
-  const MyApp({super.key, required this.isLoggedIn});
+  const MyApp({super.key, required this.firebaseInitialized});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Blog App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: SplashScreen(
+        firebaseInitialized: firebaseInitialized,
+        isConnected: firebaseInitialized, // Assuming connection if initialized
+        isLoggedIn: false, // Replace with actual login state check
       ),
-      home: isLoggedIn ? HomeScreen() : LoginScreen(),
-      routes: {
-        '/home': (context) => HomeScreen(),
-        '/myBlogs': (context) => MyBlogsScreen(),
-        '/createBlog': (context) => CreateBlogScreen(),
-      },
     );
   }
 }
